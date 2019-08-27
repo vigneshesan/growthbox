@@ -1,0 +1,70 @@
+import sys
+sys.path.append('../')
+import time
+from ph_ads import ADS1115
+ADS1115_REG_CONFIG_PGA_6_144V        = 0x00 # 6.144V range = Gain 2/3
+ADS1115_REG_CONFIG_PGA_4_096V        = 0x02 # 4.096V range = Gain 1
+ADS1115_REG_CONFIG_PGA_2_048V        = 0x04 # 2.048V range = Gain 2 (default)
+ADS1115_REG_CONFIG_PGA_1_024V        = 0x06 # 1.024V range = Gain 4
+ADS1115_REG_CONFIG_PGA_0_512V        = 0x08 # 0.512V range = Gain 8
+ADS1115_REG_CONFIG_PGA_0_256V        = 0x0A # 0.256V range = Gain 16
+ads1115 = ADS1115()
+
+def ph( number)
+	 if (number <= 0):
+		print("Ph value is :0
+ 
+	 if (285<number<1342): //less than 5, calculated directly statistics
+	 for (i = 0; i < number; i++):
+		amount += arr[i];
+   
+		avg = amount / number;
+		return avg;
+ 
+	 elif (arr[0] < arr[1]):
+   
+		min = arr[0]; max = arr[1];
+	 else:
+   
+		min = arr[1]; max = arr[0];
+		for (i = 2; i < number; i++)
+
+    	 if (arr[i] < min):
+     
+		amount += min;      //arr<min
+		min = arr[i];
+         elif (arr[i] > max):
+		amount += max;  //arr>max
+		max = arr[i];
+         else:
+                amount += arr[i]; //min<=arr<=max
+       		avg = (double)amount / (number - 2);
+ 
+ 	 return avg;
+
+
+while True :
+    #Set the IIC address
+    ads1115.setAddr_ADS1115(0x48)
+    #Sets the gain and input voltage range.
+    ads1115.setGain(ADS1115_REG_CONFIG_PGA_6_144V)
+    #Get the Digital Value of Analog of selected channel
+    adc0 = ads1115.readVoltage(0)
+    ph(adc0)
+    time.sleep(0.2)
+    print "A0:%dmV "%(adc0['r'])
+
++1342.86 mV
+2 pH	+285.71 mV
+3 pH	+228.57 mV
+4 pH	+171.43 mV
+5 pH	+114.29 mV
+6 pH	+57.14 mV
+7 pH	zero mV
+8 pH	-57.14 mV
+9 pH	-114.29 mV
+10 pH	-171.43 mV
+11 pH	-228.57 mV
+12 pH	-285.71 mV
+13 pH	-342.86 mV
+14 pH	-400 mV

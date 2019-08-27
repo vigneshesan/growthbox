@@ -1,0 +1,21 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+
+in1 = 20
+in2 = 21
+in3=19
+in4=26
+
+GPIO.setup(in1,GPIO.OUT)
+GPIO.setup(in2,GPIO.OUT)
+GPIO.setup(in3,GPIO.OUT)
+GPIO.setup(in4,GPIO.OUT)
+
+print('motor high')
+
+GPIO.output(in1,GPIO.HIGH)
+GPIO.output(in2,GPIO.HIGH)
+GPIO.output(in3,GPIO.HIGH)
+GPIO.output(in4,GPIO.HIGH)
+
